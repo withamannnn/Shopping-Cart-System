@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="cart-container">
+      <h2>🛒 Shopping Cart</h2>
+
+      <form class="add-form" id="add-product-form">
+        <input type="text" id="prod-name" placeholder="Product Name" required />
+        <input
+          type="number"
+          id="prod-price"
+          placeholder="Price"
+          min="1"
+          required
+        />
+        <input
+          type="number"
+          id="prod-qty"
+          placeholder="Quantity"
+          min="1"
+          value="1"
+          required
+        />
+        <button type="submit" class="btn btn-add">Add Product</button>
+      </form>
+      <table id="cart-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items"></tbody>
+      </table>
+
+      <div class="cart-summary">
+        <div class="summary-details">
+          <p>Total Items: <strong id="total-items">0</strong></p>
+          <p>
+            Subtotal: <strong>₹<span id="subtotal-price">0</span></strong>
+          </p>
+          <p>
+            Discount: (<span id="discount-percent">0</span>%):
+            <strong>-₹<span id="discount-amount">0</span></strong>
+          </p>
+          <h3>Final Total: ₹<span id="final-total">0</span></h3>
+        </div>
+        <div class="summary-actions">
+          <div class="discount-box">
+            <input type="text" id="coupon-code" placeholder="Enter coupon" />
+            <button id="apply-discount-btn" class="btn">Apply</button>
+          </div>
+          <button id="clear-cart-btn" class="btn btn-danger">Clear Cart</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
